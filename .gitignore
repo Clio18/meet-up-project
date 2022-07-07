@@ -1,0 +1,15 @@
+node_modules
+
+### VS Code ###
+.vscode/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+.next
+.swc
+
+package-lock.json
