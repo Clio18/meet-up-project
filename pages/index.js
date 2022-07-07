@@ -1,15 +1,16 @@
-import MeetupList from "../components/meetups/MeetupList";
 import { MongoClient } from "mongodb";
 
-const HomePage = (props) => {
+import MeetupList from "../components/meetups/MeetupList";
+
+function HomePage(props) {
   return <MeetupList meetups={props.meetups} />;
-};
+}
 
 export async function getStaticProps() {
+  // fetch data from an API
   const client = await MongoClient.connect(
     "mongodb+srv://clio:Levchenko1808@cluster0.jrr15.mongodb.net/meetups?retryWrites=true&w=majority"
   );
-
   const db = client.db();
 
   const meetupsCollection = db.collection("meetups");
